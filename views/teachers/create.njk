@@ -1,0 +1,64 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+        <section class="avatar">
+        </section>
+        <form class="details" method="POST" action="/teachers">
+            <h3 class="title">New Teacher</h3>
+            <div class="item">
+                <div><label for="avartar_url">Avatar</label></div>
+                <div><input type="url" name="avatar_url" id="avatar_url" placehoder="http://"></div>
+            </div>
+            <div class="item">
+                <div><label for="name">Nome</label></div>
+                <div><input type="text" name="name" id="name" placehoder="Preencha o nome completo"></div>
+            </div>
+
+            <div class="item">
+                <div><label for="birth">Data de Nascimento</label></div>
+                <div><input type="date" name="birth" id="birth"></div>
+            </div>
+
+        
+            <div class="item">
+                <div><label for="degree">Nivel de Escolaridade</label></div>
+                <div>
+                    <select name="degree" id="degree" class="degree"> 
+                        <option value="E">Ensino Médio Completo</option>
+                        <option value="S">Ensino Superior Completo</option>
+                        <option value="M">Mestrado</option>
+                        <option value="D">Doutorado</option> 
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="item">
+                <div> 
+                    <label for="class">Tipo de Aula</label>
+                </div>
+                <div class="tipo-aula">
+                    <input type="radio" name="classes" id="presencial" value="P"> 
+                    <label for="presencial">Presencial</label><br>
+                    <input type="radio" name="classes" id="distancia" value="D"> 
+                    <label for="distancia">Á Distância</label>
+                </div>
+                
+            </div>
+
+            <div class="item">
+                <div>
+                    <label for="area">Área de Atuação</label>
+                </div>
+                <div>
+                    <input type="text" name="area" id="area" placehoder="Separe por virgulas a area de atuacao">
+                </div>
+            </div>
+
+            <button type="Submit">Salvar</button>
+            
+        </form>
+    </div>
+{% endblock content %}

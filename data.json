@@ -1,0 +1,34 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "http://daniel",
+      "name": "daniel",
+      "birth": 1589932800000,
+      "degree": "E",
+      "classes": "P",
+      "area": "teste 1",
+      "created_at": 1589736881607
+    },
+    {
+      "id": 2,
+      "avatar_url": "http://baia.com",
+      "name": "Baia",
+      "birth": -55861315200000,
+      "degree": "E",
+      "classes": "P",
+      "area": "teste 2, teste 3, teste 4",
+      "created_at": 1589736917977
+    },
+    {
+      "id": 3,
+      "avatar_url": "http://amaral.co",
+      "name": "Amaral",
+      "birth": 1578009600000,
+      "degree": "M",
+      "classes": "P",
+      "area": "Teste 6, teste 7, teste 8",
+      "created_at": 1589736960161
+    }
+  ]
+}

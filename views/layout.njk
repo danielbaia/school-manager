@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     {% block title %}
         <title> School Manager</title>
@@ -14,6 +14,13 @@
 </head>
 
 <body>
+
+    <header>
+        <div class="links">
+            <a href="/" class="active">Teachers</a>
+            <a href="/students">Students</a>
+        </div>
+    </header>
 
     {% block content %}
 
