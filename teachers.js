@@ -1,5 +1,35 @@
 const fs = require('fs');
 const data = require('./data.json');
+const { getDegree } = require("./utils");
+
+
+
+
+//SHOW
+exports.show = function(req, res) {
+
+    const id = req.params.id;
+
+    const foundTeacher = data.teachers.find(function(teacher) {
+        return teacher.id == id;
+    })
+
+    if (!foundTeacher) res.send("Teacher not found...");
+
+
+    const teacher = {
+        ...foundTeacher,
+        degree: getDegree(foundTeacher.degree),
+        classes: foundTeacher.classes === 'P' ? 'Presencial' : 'A distancia',
+        area: foundTeacher.area.split(","),
+        created_at: Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at)
+    }
+
+    return res.render("teachers/show", { teacher });
+
+
+}
+
 
 //CREATE
 exports.post = function(req, res) {
@@ -27,7 +57,6 @@ exports.post = function(req, res) {
         classes,
         area,
         created_at
-
     });
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {

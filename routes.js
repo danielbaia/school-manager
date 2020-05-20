@@ -12,9 +12,12 @@ routes.get("/teachers", function(req, res) {
     return res.render('teachers/index');
 })
 
+
 routes.get("/teachers/create", function(req, res) {
     return res.render('teachers/create');
 });
+
+routes.get("/teachers/:id", teachers.show);
 
 routes.post("/teachers", teachers.post);
 
@@ -22,8 +25,6 @@ routes.post("/teachers", teachers.post);
 routes.get("/students", function(req, res) {
     return res.render('students/index');
 })
-
-
 
 
 module.exports = routes;
