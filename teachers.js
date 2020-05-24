@@ -4,6 +4,11 @@ const { getDegree, age, date } = require("./utils");
 
 
 
+//INDEX
+exports.index = function(req, res) {
+    return res.render('teachers/index', { teachers: data.teachers });
+}
+
 //EDIT
 exports.edit = function(req, res) {
 

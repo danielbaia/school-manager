@@ -2,40 +2,35 @@
 
 {% block content %}
 
-    <div class="card">
-        <section class="avatar">
-        </section>
-        <section class="details">
-            <h3 class="title">Detalhes</h3>
-            <div>
-                <div class="item">
-                    <p>Nome completo</p>
-                    <p>Daniel Amaral</p>
-                </div>
-                <div class="item">
-                    <p>Idade</p>
-                    <p>28 anos</p>
-                </div>
-                <div class="item">
-                    <p>Grau de Escolaridade</p>
-                    <p>Bacharel</p>
-                </div>
-                <div class="item">
-                    <p>Tipo de Aula</p>
-                    <p>Presencial</p>
-                </div>
-                <div class="item">
-                    <p>Acompanhamento</p>
-                    <p>
-                        <span>Fisica</span>
-                        <span>Matematica</span>
-                    </p>
-                </div>
-                <div class="item">
-                    <p>Desde</p>
-                    <p>20/10/2020</p>
-                </div>
-            </div>
-        </section>
+    <div class="card container-table">
+       <table>
+            <thead>
+                <tr>
+                    <th>Nome Completo</th>
+                    <th>Acompanhamento</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>
+                            <span style="background: url(
+                            '{{teacher.avatar_url}}') no-repeat top center / cover"></span>
+                            {{teacher.name}}
+                        </td>
+                        <td>{{teacher.area}}</td>
+                        <td>
+                            <a href="/teachers/{{teacher.id}}/edit">Editar</a>
+                            <a href="/teachers/{{teacher.id}}">Ver</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+               
+                
+            </tbody>
+        
+        </table>
     </div>
 {% endblock content %}
