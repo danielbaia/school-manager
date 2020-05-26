@@ -1,5 +1,38 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-students
+
+    <div class="card container-table">
+
+        <a href="/students/create">Novo</a>
+       <table>
+            <thead>
+                <tr>
+                    <th>Nome Completo</th>
+                    <th>Acompanhamento</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for teacher in teachers %}
+                    <tr>
+                        <td>
+                            <span style="background: url(
+                            '{{teacher.avatar_url}}') no-repeat top center / cover"></span>
+                            {{teacher.name}}
+                        </td>
+                        <td>{{teacher.area}}</td>
+                        <td>
+                            <a href="/teachers/{{teacher.id}}/edit">Editar</a>
+                            <a href="/teachers/{{teacher.id}}">Ver</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+               
+                
+            </tbody>
+        
+        </table>
+    </div>
 {% endblock content %}

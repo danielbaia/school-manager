@@ -1,0 +1,77 @@
+<div class="item">
+    <div><label for="avartar_url">Avatar</label></div>
+    <div><input type="url" name="avatar_url" id="avatar_url" placehoder="http://"
+    value= "{{student.avatar_url}}"></div>
+</div>
+<div class="item">
+    <div><label for="name">Nome</label></div>
+    <div><input type="text" name="name" id="name" placehoder="Preencha o nome completo"
+    value="{{student.name}}"></div>
+</div>
+
+
+<div class="item">
+    <div><label for="email">Email</label></div>
+    <div><input type="email" name="email" id="email" placehoder="Preencha o nome completo"
+    value="{{student.email}}"></div>
+</div>
+
+<div class="item">
+    <div><label for="birth">Data de Nascimento</label></div>
+    <div><input type="date" name="birth" id="birth"
+    value="{{student.birth}}"></div>
+</div>
+
+
+<div class="item">
+    <div><label for="classes">Ano Escolar</label></div>
+    <div>
+        <select name="classes" id="classes"> 
+            <option value="1F" {% if student.classes == "1F" %} seleted{% endif %}>
+                1&deg Ano Ensino Fundamental
+            </option>
+            <option value="2F" {% if student.classes == "1F" %} seleted{% endif %}>
+                2&deg Ano Ensino Fundamental
+            </option>
+            <option value="3F" {% if student.classes == "1F" %} seleted{% endif %}>
+                3&deg Ano Ensino Fundamental
+            </option>
+            <option value="4F" {% if student.classes == "1F" %} seleted{% endif %}>
+                4&deg Ano Ensino Fundamental
+            </option>
+            <option value="5F" {% if student.classes == "1F" %} seleted{% endif %}>
+                5&deg Ano Ensino Fundamental
+            </option>
+            <option value="6F" {% if student.classes == "1F" %} seleted{% endif %}>
+                6&deg Ano Ensino Fundamental
+            </option>
+            <option value="7F" {% if student.classes == "1F" %} seleted{% endif %}>
+                7&deg Ano Ensino Fundamental
+            </option>
+            <option value="8F" {% if student.classes == "1F" %} seleted{% endif %}>
+                8&deg Ano Ensino Fundamental
+            </option>
+            <option value="9F" {% if student.classes == "1F" %} seleted{% endif %}>
+                9&deg Ano Ensino Fundamental
+            </option>
+            <option value="1M" {% if student.classes == "1F" %} seleted{% endif %}>
+                1&deg Ano Ensino Médio
+            </option>
+            <option value="2M" {% if student.classes == "1F" %} seleted{% endif %}>
+                2&deg Ano Ensino Médio
+            </option>
+            <option value="3M" {% if student.classes == "1F" %} seleted{% endif %}>
+                3&deg Ano Ensino Médio
+            </option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div><label for="classHours">Carga Horaria Semanal(hr)</label></div>
+    <div><input type="number" name="classHours" id="classHours"
+    value="{{student.classHours}}"></div>
+</div>
+
+
+<button type="Submit">Salvar</button>

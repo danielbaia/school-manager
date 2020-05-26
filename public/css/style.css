@@ -277,13 +277,19 @@ table tbody tr td:first-child span {
     box-shadow: 1px 1px 1px -4px rgba(0, 0, 0, 0.2);
 }
 
-tr a {
+tr a,
+.container-table>a {
     text-decoration: none;
     padding: 8px 16px;
     background: var(--color-primary);
     color: var(--color-white);
     border-radius: 8px;
     font-size: 0.875em;
+}
+
+.container-table>a {
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
 .container-table thead tr th:last-child {

@@ -1,7 +1,6 @@
 const fs = require('fs');
-const data = require('./data.json');
-const { getDegree, age, date } = require("./utils");
-
+const data = require('../data.json');
+const { getDegree, age, date } = require("../utils");
 
 
 //INDEX
@@ -9,54 +8,12 @@ exports.index = function(req, res) {
     return res.render('teachers/index', { teachers: data.teachers });
 }
 
-//EDIT
-exports.edit = function(req, res) {
-
-    const { id } = req.params
-
-    const foundTeacher = data.teachers.find(function(teacher) {
-        return teacher.id == id;
-    })
-
-    if (!foundTeacher) {
-        return res.send("Teacher not found...");
-    }
-
-    const teacher = {
-        ...foundTeacher,
-        birth: date(foundTeacher.birth)
-    }
-
-    return res.render('teachers/edit', { teacher });
-}
-
-//SHOW
-exports.show = function(req, res) {
-
-    const id = req.params.id;
-
-    const foundTeacher = data.teachers.find(function(teacher) {
-        return teacher.id == id;
-    })
-
-    if (!foundTeacher) res.send("Teacher not found...");
-
-
-    const teacher = {
-        ...foundTeacher,
-        age: age(foundTeacher.birth),
-        degree: getDegree(foundTeacher.degree),
-        classes: foundTeacher.classes === 'P' ? 'Presencial' : 'A distancia',
-        area: foundTeacher.area.split(","),
-        created_at: Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at)
-    }
-
-    return res.render("teachers/show", { teacher });
-
-
-}
-
 //CREATE
+exports.create = function(req, res) {
+    return res.render('teachers/create');
+}
+
+//POST
 exports.post = function(req, res) {
 
     const keys = Object.keys(req.body);
@@ -93,6 +50,53 @@ exports.post = function(req, res) {
 
     //return res.send(req.body);
 
+}
+
+//SHOW
+exports.show = function(req, res) {
+
+    const id = req.params.id;
+
+    const foundTeacher = data.teachers.find(function(teacher) {
+        return teacher.id == id;
+    })
+
+    if (!foundTeacher) res.send("Teacher not found...");
+
+
+    const teacher = {
+        ...foundTeacher,
+        age: age(foundTeacher.birth),
+        degree: getDegree(foundTeacher.degree),
+        classes: foundTeacher.classes === 'P' ? 'Presencial' : 'A distancia',
+        area: foundTeacher.area.split(","),
+        created_at: Intl.DateTimeFormat("pt-BR").format(foundTeacher.created_at)
+    }
+
+    return res.render("teachers/show", { teacher });
+
+
+}
+
+//EDIT
+exports.edit = function(req, res) {
+
+    const { id } = req.params
+
+    const foundTeacher = data.teachers.find(function(teacher) {
+        return teacher.id == id;
+    })
+
+    if (!foundTeacher) {
+        return res.send("Teacher not found...");
+    }
+
+    const teacher = {
+        ...foundTeacher,
+        birth: date(foundTeacher.birth)
+    }
+
+    return res.render('teachers/edit', { teacher });
 }
 
 //PUT
