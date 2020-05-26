@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('../data.json');
-const { getDegree, age, date } = require("../utils");
+const { age, date, degree } = require("../utils");
 
 
 //INDEX
@@ -62,14 +62,10 @@ exports.show = function(req, res) {
 
     if (!foundStudent) res.send("Student not found...");
 
-
     const student = {
         ...foundStudent,
-        age: age(foundStudent.birth),
-        degree: getDegree(foundStudent.degree),
-        classes: foundStudent.classes === 'P' ? 'Presencial' : 'A distancia',
-        area: foundStudent.area.split(","),
-        created_at: Intl.DateTimeFormat("pt-BR").format(foundStudent.created_at)
+        birthDate: date(foundStudent.birth).birthDate,
+        degree: degree(foundStudent.degree)
     }
 
     return res.render("students/show", { student });
@@ -92,8 +88,11 @@ exports.edit = function(req, res) {
 
     const student = {
         ...foundStudent,
-        birth: date(foundStudent.birth)
+        birth: date(foundStudent.birth).iso
     }
+
+    console.log(student.birth);
+
 
     return res.render('students/edit', { student });
 }
@@ -103,8 +102,6 @@ exports.put = function(req, res) {
 
     const { id } = req.body;
     let index = 0;
-
-    console.log('teste');
 
     const studentFound = data.students.find(function(student, foundIndex) {
         if (id == student.id) {

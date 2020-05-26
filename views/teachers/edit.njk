@@ -20,6 +20,19 @@
                 <button type="submit"> Excluir</button>
             
             </form>
+
+           <script>
+            const formDelete = document.querySelector(".form-delete");
+       
+            formDelete.addEventListener("submit", function(even){
+                const confirmation = confirm("Tem certeza que deseja excluir membro?")
+                if(!confirmation)
+                    even.preventDefault();
+            
+            });
+            </script>
+
+
          <section>
     </div>
 {% endblock content %}

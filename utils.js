@@ -33,10 +33,54 @@ module.exports = {
         const birthDate = new Date(timestamp);
 
         const year = birthDate.getUTCFullYear();
-        const month = `0${birthDate.getUTCMonth()}`.slice(-2);
+        const month = `0${birthDate.getUTCMonth() + 1}`.slice(-2);
         const day = `0${birthDate.getUTCDate()}`.slice(-2);
 
-        return `${year}-${month}-${day}`;
+        return {
+            iso: `${year}-${month}-${day}`,
+            birthDate: `${day}/${month}`
+        }
+    },
+
+    degree: function(str) {
+
+        if (str === '1F') {
+            return '1&deg Ano Ensino Fundamental';
+
+        } else if (str === '2F') {
+            return '2&deg Ano Ensino Fundamental';
+
+        } else if (str === '3F') {
+            return '3&deg Ano Ensino Fundamental';
+
+        } else if (str === '4F') {
+            return '4&deg Ano Ensino Fundamental';
+
+        } else if (str === '5F') {
+            return '5&deg Ano Ensino Fundamental';
+
+        } else if (str === '6F') {
+            return '6&deg Ano Ensino Fundamental';
+
+        } else if (str === '7F') {
+            return '7&deg Ano Ensino Fundamental';
+
+        } else if (str === '8F') {
+            return '8&deg Ano Ensino Fundamental';
+
+        } else if (str === '9F') {
+            return '9&deg Ano Ensino Fundamental';
+
+        } else if (str === '1M') {
+            return '1&deg Ano Ensino Medio';
+
+        } else if (str === '2M') {
+            return '2&deg Ano Ensino Medio';
+
+        } else if (str === '3M') {
+            return '3&deg Ano Ensino Medio';
+
+        }
     }
 
 }

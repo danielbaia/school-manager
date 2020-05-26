@@ -1,42 +1,4 @@
 {
-    "students": [{
-        "avatar_url": "http://daniel.com",
-        "name": "daniel baia",
-        "email": "daniel@baia.com",
-        "birth": 972000000000,
-        "classes": "2M",
-        "classHours": "19",
-        "id": 1
-    }],
-    "teachers": [{
-            "id": 2,
-            "avatar_url": "https://source.unsplash.com/collection/4755774/300x300",
-            "name": "Baia",
-            "birth": 1589932800000,
-            "degree": "E",
-            "classes": "D",
-            "area": "teste 2, teste 3, teste 4",
-            "created_at": 1589736917977
-        },
-        {
-            "id": 3,
-            "avatar_url": "https://source.unsplash.com/collection/4755774/300x300",
-            "name": "Amaral",
-            "birth": 1589932800000,
-            "degree": "M",
-            "classes": "P",
-            "area": "Teste 6, teste 7, teste 8",
-            "created_at": 1589736960161
-        },
-        {
-            "id": 4,
-            "avatar_url": "https://source.unsplash.com/collection/4755774/300x300",
-            "name": "Teste 2",
-            "birth": 952041600000,
-            "degree": "D",
-            "classes": "P",
-            "area": "science, physics",
-            "created_at": 1590000681215
-        }
-    ]
+  "students": [],
+  "teachers": []
 }

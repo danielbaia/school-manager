@@ -8,24 +8,24 @@
        <table>
             <thead>
                 <tr>
-                    <th>Nome Completo</th>
-                    <th>Acompanhamento</th>
+                    <th>Student</th>
+                    <th>Email</th>
                     <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
 
-                {% for teacher in teachers %}
+                {% for student in students %}
                     <tr>
                         <td>
                             <span style="background: url(
-                            '{{teacher.avatar_url}}') no-repeat top center / cover"></span>
-                            {{teacher.name}}
+                            '{{student.avatar_url}}') no-repeat top center / cover"></span>
+                            {{student.name}}
                         </td>
-                        <td>{{teacher.area}}</td>
+                        <td>{{student.area}}</td>
                         <td>
-                            <a href="/teachers/{{teacher.id}}/edit">Editar</a>
-                            <a href="/teachers/{{teacher.id}}">Ver</a>
+                            <a href="/students/{{student.id}}/edit">Editar</a>
+                            <a href="/students/{{student.id}}">Ver</a>
                         </td>
                     </tr>
                 {% endfor %}

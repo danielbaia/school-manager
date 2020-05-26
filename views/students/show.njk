@@ -3,43 +3,39 @@
 {% block content %}
 
     <div class="card">
-        <section class="avatar" style="background: url('{{teacher.avatar_url}}') no-repeat center center / cover;">
+        <section class="avatar" style="background: url('{{student.avatar_url}}') no-repeat center center / cover;">
         </section>
         <section class="details">
             <h3 class="title">Detalhes</h3>
             <div>
                 <div class="item">
                     <p>Nome completo</p>
-                    <p>{{teacher.name}}</p>
+                    <p>{{student.name}}</p>
                 </div>
+
                 <div class="item">
-                    <p>Idade</p>
-                    <p>{{teacher.age}} anos</p>
+                    <p>Email</p>
+                    <p>{{student.email}}</p>
                 </div>
+
                 <div class="item">
-                    <p>Grau de Escolaridade</p>
-                    <p>{{teacher.degree}}</p>
+                    <p>Data de Aniversario</p>
+                    <p>{{student.birthDate}}</p>
                 </div>
+
                 <div class="item">
-                    <p>Tipo de Aula</p>
-                    <p>{{teacher.classes}}</p>
+                    <p>Ano Escolar</p>
+                    <p>{{student.degree}}</p>
                 </div>
+
                 <div class="item">
-                    <p>Acompanhamento</p>
-                    <p>
-                        {% for area in teacher.area %}
-                            <span>{{area}}</span>
-                        {% endfor %}
-                    </p>
-                </div>
-                <div class="item">
-                    <p>Desde</p>
-                    <p>{{teacher.created_at}}</p>
-                </div>
-                <div class="item">
-                    <a href="/teachers">Voltar</a>
+                    <p>Carga Horaria Semanal(hr)</p>
+                    <p>{{student.classHours}}</p>
                 </div>
                
+                <div class="item">
+                    <a href="/students">Voltar</a>
+                </div>  
             </div>
         </section>
     </div>
