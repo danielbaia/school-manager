@@ -21,18 +21,8 @@
             
             </form>
 
-            <script>
-                
-                const formDelete = document.querySelector(".form-delete");
+            {% include 'confirm.njk' %}
 
-                formDelete.addEventListener("submit", function(even){
-
-                    const confirmation = confirm("Tem certeza que deseja excluir?");
-                    if(!confirmation)
-                        even.preventDefault()
-                });
-            
-            </script>
          <section>
     </div>
 {% endblock content %}
