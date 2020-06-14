@@ -17,9 +17,9 @@
 
 
 <div class="item">
-    <div><label for="degree">Nivel de Escolaridade</label></div>
+    <div><label for="education_level">Nivel de Escolaridade</label></div>
     <div>
-        <select name="degree" id="degree" class="degree"> 
+        <select name="education_level" id="education_level" class="education_level"> 
             <option value="E">Ensino Médio Completo</option>
             <option value="S">Ensino Superior Completo</option>
             <option value="M">Mestrado</option>
@@ -31,16 +31,16 @@
 
 <div class="item">
     <div> 
-        <label for="class">Tipo de Aula</label>
+        <label for="class_type">Tipo de Aula</label>
     </div>
     <div class="tipo-aula">
-        <input type="radio" name="classes" id="presencial" value="P"
-        {% if teacher.classes == 'P' %}
+        <input type="radio" name="class_type" id="presencial" value="P"
+        {% if teacher.class_type == 'P' %}
         checked
         {% endif %}> 
         <label for="presencial">Presencial</label><br>
-        <input type="radio" name="classes" id="distancia" value="D"
-        {% if teacher.classes == 'D' %}
+        <input type="radio" name="class_type" id="distancia" value="D"
+        {% if teacher.class_type == 'D' %}
         checked
         {% endif %}> 
         <label for="distancia">Á Distância</label>
@@ -50,11 +50,11 @@
 
 <div class="item">
     <div>
-        <label for="area">Área de Atuação</label>
+        <label for="subjects_taught">Área de Atuação</label>
     </div>
     <div>
-        <input type="text" name="area" id="area" placehoder="Separe por virgulas a area de atuacao"
-        value="{{teacher.area}}">
+        <input type="text" name="subjects_taught" id="subjects_taught" placehoder="Separe por virgulas a area de atuacao"
+        value="{{teacher.subjects_taught}}">
     </div>
 </div>
 

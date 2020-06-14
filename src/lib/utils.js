@@ -1,5 +1,5 @@
 module.exports = {
-    getDegree: function(degree) {
+    educationLevel(degree) {
         if (degree === 'E') {
             return 'Ensino Médio Completo'
         } else if (degree === 'S') {
@@ -13,7 +13,7 @@ module.exports = {
         }
     },
 
-    age: function(birthDate) {
+    age(birthDate) {
         const today = new Date();
         const birth = new Date(birthDate);
 
@@ -28,7 +28,7 @@ module.exports = {
 
     },
 
-    date: function(timestamp) {
+    date(timestamp) {
 
         const birthDate = new Date(timestamp);
 
@@ -38,11 +38,12 @@ module.exports = {
 
         return {
             iso: `${year}-${month}-${day}`,
-            birthDate: `${day}/${month}`
+            birthDate: `${day}/${month}`,
+            format: `${day}/${month}/${year}`
         }
     },
 
-    degree: function(str) {
+    degree(str) {
 
         if (str === '1F') {
             return '1&deg Ano Ensino Fundamental';
@@ -81,6 +82,10 @@ module.exports = {
             return '3&deg Ano Ensino Medio';
 
         }
+    },
+
+    teacherClassType(str) {
+        return str == 'P' ? 'Presencial' : 'Distancia';
     }
 
 }

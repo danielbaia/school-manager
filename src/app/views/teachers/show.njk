@@ -18,16 +18,16 @@
                 </div>
                 <div class="item">
                     <p>Grau de Escolaridade</p>
-                    <p>{{teacher.degree}}</p>
+                    <p>{{teacher.education_level}}</p>
                 </div>
                 <div class="item">
                     <p>Tipo de Aula</p>
-                    <p>{{teacher.classes}}</p>
+                    <p>{{teacher.class_type}}</p>
                 </div>
                 <div class="item">
                     <p>Acompanhamento</p>
                     <p>
-                        {% for area in teacher.area %}
+                        {% for area in teacher.subjects_taught %}
                             <span>{{area}}</span>
                         {% endfor %}
                     </p>
