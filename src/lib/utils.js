@@ -1,5 +1,5 @@
 module.exports = {
-    educationLevel(degree) {
+    teacherLevel(degree) {
         if (degree === 'E') {
             return 'Ensino Médio Completo'
         } else if (degree === 'S') {
@@ -43,7 +43,7 @@ module.exports = {
         }
     },
 
-    degree(str) {
+    studentLevel(str) {
 
         if (str === '1F') {
             return '1&deg Ano Ensino Fundamental';

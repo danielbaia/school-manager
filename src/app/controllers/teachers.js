@@ -1,5 +1,5 @@
 const Teachers = require('../Models/teachers');
-const { date, age, educationLevel, teacherClassType } = require('../../lib/utils');
+const { date, age, teacherLevel, teacherClassType } = require('../../lib/utils');
 const teachers = require('../Models/teachers');
 
 
@@ -41,7 +41,7 @@ module.exports = {
             if (!teacher) res.render("Teacher not found...");
 
             teacher.age = age(teacher.birth);
-            teacher.education_level = educationLevel(teacher.education_level);
+            teacher.education_level = teacherLevel(teacher.education_level);
             teacher.class_type = teacherClassType(teacher.class_type);
             teacher.subjects_taught = teacher.subjects_taught.split(",");
             teacher.created_at = date(teacher.created_at).format;

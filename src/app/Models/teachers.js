@@ -4,7 +4,7 @@ const { date } = require('../../lib/utils')
 module.exports = {
 
     all(callback) {
-        db.query(`SELECT * FROM teachers ORDER by ID`, function(err, results) {
+        db.query(`SELECT * FROM teachers ORDER by name ASC`, function(err, results) {
             if (err) throw `Database error ${err}`;
             callback(results.rows);
         })

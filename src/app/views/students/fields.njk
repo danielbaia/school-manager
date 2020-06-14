@@ -24,43 +24,43 @@
 
 
 <div class="item">
-    <div><label for="degree">Ano Escolar</label></div>
+    <div><label for="education_level">Ano Escolar</label></div>
     <div>
-        <select name="degree" id="degree"> 
-            <option value="1F" {% if student.degree == "1F" %} selected {% endif %}>
+        <select name="education_level" id="education_level"> 
+            <option value="1F" {% if student.education_level == "1F" %} selected {% endif %}>
                 1&deg Ano Ensino Fundamental
             </option>
-            <option value="2F" {% if student.degree == "2F" %} selected {% endif %}>
+            <option value="2F" {% if student.education_level == "2F" %} selected {% endif %}>
                 2&deg Ano Ensino Fundamental
             </option>
-            <option value="3F" {% if student.degree == "3F" %} selected {% endif %}>
+            <option value="3F" {% if student.education_level == "3F" %} selected {% endif %}>
                 3&deg Ano Ensino Fundamental
             </option>
-            <option value="4F" {% if student.degree == "4F" %} selected {% endif %}>
+            <option value="4F" {% if student.education_level == "4F" %} selected {% endif %}>
                 4&deg Ano Ensino Fundamental
             </option>
-            <option value="5F" {% if student.degree == "5F" %} selected {% endif %}>
+            <option value="5F" {% if student.education_level == "5F" %} selected {% endif %}>
                 5&deg Ano Ensino Fundamental
             </option>
-            <option value="6F" {% if student.degree == "6F" %} selected {% endif %}>
+            <option value="6F" {% if student.education_level == "6F" %} selected {% endif %}>
                 6&deg Ano Ensino Fundamental
             </option>
-            <option value="7F" {% if student.degree == "7F" %} selected {% endif %}>
+            <option value="7F" {% if student.education_level == "7F" %} selected {% endif %}>
                 7&deg Ano Ensino Fundamental
             </option>
-            <option value="8F" {% if student.degree == "8F" %} selected {% endif %}>
+            <option value="8F" {% if student.education_level == "8F" %} selected {% endif %}>
                 8&deg Ano Ensino Fundamental
             </option>
-            <option value="9F" {% if student.degree == "9F" %} selected {% endif %}>
+            <option value="9F" {% if student.education_level == "9F" %} selected {% endif %}>
                 9&deg Ano Ensino Fundamental
             </option>
-            <option value="1M" {% if student.degree == "1M" %} selected {% endif %}>
+            <option value="1M" {% if student.education_level == "1M" %} selected {% endif %}>
                 1&deg Ano Ensino Médio
             </option>
-            <option value="2M" {% if student.degree == "2M" %} selected {% endif %}>
+            <option value="2M" {% if student.education_level == "2M" %} selected {% endif %}>
                 2&deg Ano Ensino Médio
             </option>
-            <option value="3M" {% if student.degree == "3M" %} selected {% endif %}>
+            <option value="3M" {% if student.education_level == "3M" %} selected {% endif %}>
                 3&deg Ano Ensino Médio
             </option>
         </select>
@@ -68,8 +68,8 @@
 </div>
 
 <div class="item">
-    <div><label for="classHours">Carga Horaria Semanal(hr)</label></div>
-    <div><input type="number" name="classHours" id="classHours"
+    <div><label for="class_hours">Carga Horaria Semanal(hr)</label></div>
+    <div><input type="number" name="class_hours" id="class_hours"
     value="{{student.classHours}}"></div>
 </div>
 
