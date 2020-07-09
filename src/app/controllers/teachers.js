@@ -15,6 +15,7 @@ module.exports = {
     },
 
     create(req, res) {
+
         return res.render('teachers/create');
     },
     post(req, res) {

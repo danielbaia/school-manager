@@ -1,5 +1,6 @@
 const Students = require('../Models/students');
 const { date, age, studentLevel } = require('../../lib/utils');
+const { optionTeachers } = require('../Models/students');
 
 
 
@@ -14,7 +15,13 @@ module.exports = {
     },
 
     create(req, res) {
-        return res.render('students/create');
+
+        Students.optionsSelectTeachers(function(optionsTeacher) {
+
+            return res.render('students/create', { optionsTeacher });
+
+        });
+
     },
     post(req, res) {
 
@@ -52,8 +59,16 @@ module.exports = {
 
         Students.find(req.params.id, function(student) {
 
+            if (!student) res.send("Student not found...");
+
             student.birth = date(student.birth).iso;
-            return res.render(`students/edit`, { student });
+
+            Students.optionsSelectTeachers(function(optionsTeacher) {
+
+                return res.render(`students/edit`, { student, optionsTeacher });
+
+            })
+
 
         });
 

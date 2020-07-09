@@ -70,7 +70,22 @@
 <div class="item">
     <div><label for="class_hours">Carga Horaria Semanal(hr)</label></div>
     <div><input type="number" name="class_hours" id="class_hours"
-    value="{{student.classHours}}"></div>
+    value="{{student.class_hours}}"></div>
+</div>
+
+
+<div class="item">
+    <div><label for="teacher">Professor</label></div>
+    <div>
+        <select name="teacher"> 
+            {% for teacher in optionsTeacher %}
+                <option value="{{teacher.id}}" {% if student.teacher_id == teacher.id %} selected {% endif %}>
+                    {{teacher.name}}
+                </option>
+            {% endfor %}
+           
+        </select>
+    </div>
 </div>
 
 
