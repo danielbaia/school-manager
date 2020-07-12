@@ -8,9 +8,19 @@ module.exports = {
 
     index(req, res) {
 
-        Teachers.all(function(teachers) {
-            return res.render('teachers/index', { teachers });
-        });
+        const { filter } = req.query;
+
+        if (filter) {
+            Teachers.findBy(filter, function(teachers) {
+                return res.render('teachers/index', { teachers, filter });
+            });
+
+        } else {
+            Teachers.all(function(teachers) {
+                return res.render('teachers/index', { teachers });
+            });
+        }
+
 
     },
 

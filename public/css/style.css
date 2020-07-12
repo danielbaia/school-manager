@@ -299,3 +299,40 @@ tr a,
 tbody tr td:last-child {
     text-align: center;
 }
+
+
+/*FILTERS*/
+
+.container-table .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.container-table .header a {
+    width: 120px;
+    padding: 8px 32px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1em;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 4px;
+}
+
+.container-table .header form button,
+.container-table .header form input {
+    margin: 0;
+}
+
+.container-table .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-table .header form input {
+    font-weight: normal;
+}
